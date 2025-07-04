@@ -1,8 +1,11 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Users, Star } from 'lucide-react';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div 
@@ -33,11 +36,17 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button 
+            onClick={() => navigate('/rooms')}
+            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
             Book Your Stay
           </button>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-            Explore Rooms
+          <button 
+            onClick={() => navigate('/gallery')}
+            className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+          >
+            View Gallery
           </button>
         </div>
 
